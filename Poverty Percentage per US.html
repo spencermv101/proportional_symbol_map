@@ -1,0 +1,323 @@
+
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+ 
+<title>Poverty Percentage per US</title> 
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"> 
+<link rel="stylesheet" href="./Poverty Percentage per US_files/leaflet.css"> 
+
+<style>
+#map-description {
+    position: absolute;
+    bottom: 100px; /* Position it near the bottom of the page or adjust as needed */
+    width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+    background: rgba(245, 245, 245, 0.8); /* Slightly transparent background */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    border-radius: 5px; /* Rounded corners */
+    font-family: sans-serif;
+    z-index: 800; /* Ensure it appears above other elements */
+    color: #333; /* Text color */
+}
+     body { 
+    margin:0; 
+    padding:0; 
+    font-family: 
+    sans-serif; 
+    } 
+ 
+  h1 { 
+    position: absolute; 
+    left: 50px; 
+    top: 10px; 
+    padding: 8px 2%; 
+    margin: 0; 
+    background: rgba(46, 104, 44, 0.8); 
+    box-shadow: 0 0 15px rgba(0,0,0,0.2); 
+    border-radius: 3px; 
+    color: whitesmoke; 
+    font-size: 1.5em; 
+    z-index: 800; 
+    } 
+ 
+  #map { 
+    position:absolute; 
+    top:0; 
+    bottom:0; 
+    width:100%; 
+    height: 540px; 
+   } 
+
+.info { 
+z-index: 1000; 
+position: absolute; 
+right: 20px; 
+top: 20px; 
+padding: 6px 8px; 
+font: 14px Arial, Helvetica, sans-serif; 
+text-align: right; 
+background: white; 
+background: rgba(255, 255, 255, 0.8); 
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
+border-radius: 5px; 
+} 
+.info h1 { 
+font-size: 16px; 
+margin: 0 0 5px; 
+color: #777777; 
+}
+.legend {
+                position: absolute;
+                bottom: 50px;
+                left: 8px;
+                background-color: rgb(255, 255, 255);
+                padding: 10px;
+                border-radius: 5px;
+                z-index: 1000;
+                box-shadow: 0 0 5px #e09d70;
+            }
+
+
+</style>
+
+</head>
+
+ <body data-new-gr-c-s-check-loaded="14.1207.0" data-gr-ext-installed="" data-new-gr-c-s-loaded="14.1207.0"> 
+    
+<div id="map" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="outline: none;"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 19; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" role="presentation" src="./Poverty Percentage per US_files/6.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(572px, 248px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Poverty Percentage per US_files/5.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(572px, -8px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Poverty Percentage per US_files/6(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(316px, 248px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Poverty Percentage per US_files/6(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(828px, 248px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Poverty Percentage per US_files/7.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(572px, 504px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Poverty Percentage per US_files/5(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(316px, -8px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Poverty Percentage per US_files/5(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(828px, -8px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Poverty Percentage per US_files/7(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(316px, 504px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Poverty Percentage per US_files/7(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(828px, 504px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Poverty Percentage per US_files/6(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(60px, 248px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Poverty Percentage per US_files/6(4).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1084px, 248px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Poverty Percentage per US_files/5(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(60px, -8px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Poverty Percentage per US_files/5(4).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1084px, -8px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Poverty Percentage per US_files/7(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(60px, 504px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Poverty Percentage per US_files/7(4).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1084px, 504px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Poverty Percentage per US_files/6(5).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-196px, 248px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Poverty Percentage per US_files/6(6).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1340px, 248px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Poverty Percentage per US_files/5(5).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-196px, -8px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Poverty Percentage per US_files/5(6).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1340px, -8px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Poverty Percentage per US_files/7(5).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-196px, 504px, 0px); opacity: 1;"><img alt="" role="presentation" src="./Poverty Percentage per US_files/7(6).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1340px, 504px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-overlay-pane"><svg pointer-events="none" class="leaflet-zoom-animated" width="1843" height="648" viewBox="-154 -54 1843 648" style="transform: translate3d(-154px, -54px, 0px);"><g><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M842,364a23,23 0 1,0 46,0 a23,23 0 1,0 -46,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M0 0"></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M566,352a18,18 0 1,0 36,0 a18,18 0 1,0 -36,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M778,335a23,23 0 1,0 46,0 a23,23 0 1,0 -46,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M473,319a17,17 0 1,0 34,0 a17,17 0 1,0 -34,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M641,277a13,13 0 1,0 26,0 a13,13 0 1,0 -26,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M1011,239a13,13 0 1,0 26,0 a13,13 0 1,0 -26,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M961,273a15,15 0 1,0 30,0 a15,15 0 1,0 -30,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M905,431a18,18 0 1,0 36,0 a18,18 0 1,0 -36,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M881,361a19,19 0 1,0 38,0 a19,19 0 1,0 -38,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M47,514a13,13 0 1,0 26,0 a13,13 0 1,0 -26,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M534,198a15,15 0 1,0 30,0 a15,15 0 1,0 -30,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M824,257a16,16 0 1,0 32,0 a16,16 0 1,0 -32,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M854,265a17,17 0 1,0 34,0 a17,17 0 1,0 -34,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M776,232a15,15 0 1,0 30,0 a15,15 0 1,0 -30,0 "></path><path class="leaflet-interactive" stroke="#ff7900" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#ff7900" fill-opacity="0.6" fill-rule="evenodd" d="M735,284a16,16 0 1,0 32,0 a16,16 0 1,0 -32,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M866,297a23,23 0 1,0 46,0 a23,23 0 1,0 -46,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M779,386a28,28 0 1,0 56,0 a28,28 0 1,0 -56,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M1048,190a15,15 0 1,0 30,0 a15,15 0 1,0 -30,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M966,276a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M1025,229a13,13 0 1,0 26,0 a13,13 0 1,0 -26,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M872,212a18,18 0 1,0 36,0 a18,18 0 1,0 -36,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M772,174a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M803,365a29,29 0 1,0 58,0 a29,29 0 1,0 -58,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M784,285a18,18 0 1,0 36,0 a18,18 0 1,0 -36,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M578,154a17,17 0 1,0 34,0 a17,17 0 1,0 -34,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M720,246a14,14 0 1,0 28,0 a14,14 0 1,0 -28,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M503,287a17,17 0 1,0 34,0 a17,17 0 1,0 -34,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M1029,210a9,9 0 1,0 18,0 a9,9 0 1,0 -18,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M991,258a13,13 0 1,0 26,0 a13,13 0 1,0 -26,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M616,337a27,27 0 1,0 54,0 a27,27 0 1,0 -54,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M980,230a19,19 0 1,0 38,0 a19,19 0 1,0 -38,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M926,326a18,18 0 1,0 36,0 a18,18 0 1,0 -36,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M703,144a14,14 0 1,0 28,0 a14,14 0 1,0 -28,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M892,257a18,18 0 1,0 36,0 a18,18 0 1,0 -36,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M727,327a22,22 0 1,0 44,0 a22,22 0 1,0 -44,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M447,192a16,16 0 1,0 32,0 a16,16 0 1,0 -32,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M958,254a16,16 0 1,0 32,0 a16,16 0 1,0 -32,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M1023,237a15,15 0 1,0 30,0 a15,15 0 1,0 -30,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M911,350a20,20 0 1,0 40,0 a20,20 0 1,0 -40,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M704,197a17,17 0 1,0 34,0 a17,17 0 1,0 -34,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M846,324a20,20 0 1,0 40,0 a20,20 0 1,0 -40,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M723,388a19,19 0 1,0 38,0 a19,19 0 1,0 -38,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M568,260a11,11 0 1,0 22,0 a11,11 0 1,0 -22,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M1011,201a14,14 0 1,0 28,0 a14,14 0 1,0 -28,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M950,295a13,13 0 1,0 26,0 a13,13 0 1,0 -26,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M457,146a13,13 0 1,0 26,0 a13,13 0 1,0 -26,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M907,285a24,24 0 1,0 48,0 a24,24 0 1,0 -48,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M818,197a14,14 0 1,0 28,0 a14,14 0 1,0 -28,0 "></path><path class="leaflet-interactive" stroke="#e09d70" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#e09d70" fill-opacity="0.6" fill-rule="evenodd" d="M617,221a14,14 0 1,0 28,0 a14,14 0 1,0 -28,0 "></path></g></svg></div><div class="leaflet-pane leaflet-marker-pane"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="http://127.0.0.1:5500/index.html#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="http://127.0.0.1:5500/index.html#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div></div><div class="leaflet-top leaflet-right"><div class="info leaflet-control"><h4>US Population Poverty</h4>Click over a state</div></div><div class="leaflet-bottom leaflet-left"><div class="legend leaflet-control"><b>Poverty Percentage (Min/Mid/Max)</b><br>
+            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                <span class="circle" style="
+                    display: inline-block;
+                    width: 18px; 
+                    height: 18px; 
+                    border-radius: 50%; 
+                    background: #ff7900; 
+                    margin-right: 8px;">
+                </span>
+                <span>7.3%</span>
+            </div>
+        
+            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                <span class="circle" style="
+                    display: inline-block;
+                    width: 32.191935832749735px; 
+                    height: 32.191935832749735px; 
+                    border-radius: 50%; 
+                    background: #ff7900; 
+                    margin-right: 8px;">
+                </span>
+                <span>11.85%</span>
+            </div>
+        
+            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                <span class="circle" style="
+                    display: inline-block;
+                    width: 57.44424785720955px; 
+                    height: 57.44424785720955px; 
+                    border-radius: 50%; 
+                    background: #ff7900; 
+                    margin-right: 8px;">
+                </span>
+                <span>19.2%</span>
+            </div>
+        </div></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com/" title="A JS library for interactive maps">Leaflet</a> | © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>, Data: US Census Bureau, Map, Population data © <a href="http://census.gov/">US Census Bureau</a> | This map is made by Madelynn. S</div></div></div></div> 
+<div id="map-description">
+
+    <h2>Map Description</h2>
+    <p>
+        This map uses 2022 data to visualize poverty percentages across US states.
+        Click on a circle to see detailed information about a specific state. The circles will change colors, so you can visualize what data you have seen. 
+    </p>
+    <p> 
+        “Overcoming poverty is not a task of charity, it is an act of justice. Like Slavery and Apartheid, poverty is not natural. It is man-made and it can be overcome and eradicated by the actions of human beings. Sometimes it falls on a generation to be great. You can be that great generation. Let your greatness blossom. - Nelson Mandela”
+</p>
+
+</div>
+
+<div class="legend"></div> 
+<h1>United States Poverty Percentages in 2022</h1> 
+
+<script src="./Poverty Percentage per US_files/jquery-2.1.4.min.js.download"></script> 
+<script src="./Poverty Percentage per US_files/leaflet.js.download"></script> 
+<script src="./Poverty Percentage per US_files/leaflet.ajax.min.js.download"></script> 
+
+<script>
+ console.log("hello world!"); 
+
+var map = L.map('map', {
+center: [39.5, -95.3],
+zoom: 4
+});
+
+
+
+var OpenStreetMap_HOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
+}).addTo(map);
+
+states = L.geoJson.ajax("assets/data.geojson",{ 
+attribution: 'Data: US Census Bureau, Map', 
+pointToLayer: function (feature, x){ 
+return L.circleMarker(x, { 
+color: '#e09d70', 
+opacity: 1, 
+weight: 2, 
+fillColor: '#e09d70', 
+fillOpacity: .6, 
+radius: calcRadius(feature.properties.estimate) 
+}).on({ 
+
+      }).bindPopup(
+            `<b>${feature.properties.name}</b><br>Poverty Percentage: ${feature.properties.estimate}%`
+            ).on({ 
+click: function(e){ 
+this.setStyle({color:'#ff7900', fillColor: '#ff7900'}); 
+} })},}); 
+
+
+var minValue = 7.30; 
+var midValue=  11.85;
+var maxValue= 19.2; 
+var minRadius = 9; 
+
+
+function calcRadius (val) {
+    return 1.0*Math.pow(val/minValue,1.2)*minRadius;
+} 
+
+states.addTo(map);
+
+var info = L.control();
+      info.onAdd = function (map) {
+          this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+          this.update();
+          return this._div;
+      };
+
+      // method that we will use to update the control based on feature properties passed
+      info.update = function (props) {
+            this._div.innerHTML = '<h4>US Population Poverty</h4>' +  (props ?
+'<b>' + props.name + '</b><br />Poverty Percentage: ' + props.estimate + '%': 'Click over a state');
+      };
+
+      info.addTo(map);
+
+      // 4. create the legend
+
+      var legend = L.control({ position: 'bottomleft' });
+
+legend.onAdd = function (map) {
+    var div = L.DomUtil.create('div', 'legend');
+    div.innerHTML += '<b>Poverty Percentage (Min/Mid/Max)</b><br>';
+
+    var sizes = [minValue, midValue, maxValue];
+
+    sizes.forEach(function (size) {
+        var radius = calcRadius(size);
+        div.innerHTML += `
+            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                <span class="circle" style="
+                    display: inline-block;
+                    width: ${radius * 2}px; 
+                    height: ${radius * 2}px; 
+                    border-radius: 50%; 
+                    background: #ff7900; 
+                    margin-right: 8px;">
+                </span>
+                <span>${size}%</span>
+            </div>
+        `;
+    });
+
+    return div;
+};
+
+legend.addTo(map);
+console.log(calcRadius(minValue)); 
+
+      // 5. create the credits
+
+      map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a> | This map is made by Madelynn. S');
+
+
+    // 6. Map description 
+
+document.getElementById('map-description').innerHTML = `
+
+    <h2>Map Description</h2>
+    <p>
+        This map uses 2022 data to visualize poverty percentages across US states.
+        Click on a circle to see detailed information about a specific state. The circles will change colors, so you can visualize what data you have seen. 
+    </p>
+    <p> 
+        “Overcoming poverty is not a task of charity, it is an act of justice. Like Slavery and Apartheid, poverty is not natural. It is man-made and it can be overcome and eradicated by the actions of human beings. Sometimes it falls on a generation to be great. You can be that great generation. Let your greatness blossom. - Nelson Mandela”
+</p>
+
+`;
+
+
+</script> 
+
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+ </body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;limited&quot;,&quot;isActive&quot;:false,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
