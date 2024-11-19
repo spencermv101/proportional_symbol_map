@@ -8,16 +8,16 @@
 <style>
 #map-description {
     position: absolute;
-    bottom: 100px; /* Position it near the bottom of the page or adjust as needed */
+    bottom: 100px;
     width: 100%;
     margin: 20px auto;
     padding: 15px;
-    background: rgba(245, 245, 245, 0.8); /* Slightly transparent background */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-    border-radius: 5px; /* Rounded corners */
+    background: rgba(245, 245, 245, 0.8);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
+    border-radius: 5px; 
     font-family: sans-serif;
-    z-index: 800; /* Ensure it appears above other elements */
-    color: #333; /* Text color */
+    z-index: 800;
+    color: #333; 
 }
      body { 
     margin:0; 
@@ -96,6 +96,10 @@ color: #777777;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script> 
 
 <script>
+
+var dataUrl = "https://spencermv101.github.io/proportional_symbol_map/assets/data.geojson";
+
+
  console.log("hello world!"); 
 
 var map = L.map('map', {
@@ -128,6 +132,8 @@ radius: calcRadius(feature.properties.estimate)
 click: function(e){ 
 this.setStyle({color:'#ff7900', fillColor: '#ff7900'}); 
 } })},}); 
+ 
+ 
 
 
 var minValue = 7.30; 
@@ -157,7 +163,7 @@ var info = L.control();
 
       info.addTo(map);
 
-      // 4. create the legend
+      // create the legend
 
       var legend = L.control({ position: 'bottomleft' });
 
@@ -190,12 +196,12 @@ legend.onAdd = function (map) {
 legend.addTo(map);
 console.log(calcRadius(minValue)); 
 
-      // 5. create the credits
+      //  create the credits
 
       map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a> | This map is made by Madelynn. S');
 
 
-    // 6. Map description 
+    //  Map description 
 
 document.getElementById('map-description').innerHTML = `
 
