@@ -1,5 +1,7 @@
 # Proportional Circle Map of 
 
+### Link to map: https://spencermv101.github.io/proportional_symbol_map/
+
 
 ## Poverty Percentage in each American State
 This map uses 2022 data to visualize poverty percentages across U.S. states. The West Coast generally has lower poverty rates compared to the South East. By displaying this map, viewers can better understand the spatial variations in poverty rates across the United States. Mapping these spatial relationships with social science data provides valuable insights into potential contributing factors and regional trends.
