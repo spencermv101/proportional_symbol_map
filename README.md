@@ -1,1 +1,0 @@
-# proportional_symbol_map
