@@ -1,0 +1,218 @@
+<html>
+ <head> 
+<meta charset=utf-8 /> 
+<title>Poverty Percentage per US</title> 
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' /> 
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" /> 
+
+<style>
+#map-description {
+    position: absolute;
+    bottom: 100px; /* Position it near the bottom of the page or adjust as needed */
+    width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+    background: rgba(245, 245, 245, 0.8); /* Slightly transparent background */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    border-radius: 5px; /* Rounded corners */
+    font-family: sans-serif;
+    z-index: 800; /* Ensure it appears above other elements */
+    color: #333; /* Text color */
+}
+     body { 
+    margin:0; 
+    padding:0; 
+    font-family: 
+    sans-serif; 
+    } 
+ 
+  h1 { 
+    position: absolute; 
+    left: 50px; 
+    top: 10px; 
+    padding: 8px 2%; 
+    margin: 0; 
+    background: rgba(46, 104, 44, 0.8); 
+    box-shadow: 0 0 15px rgba(0,0,0,0.2); 
+    border-radius: 3px; 
+    color: whitesmoke; 
+    font-size: 1.5em; 
+    z-index: 800; 
+    } 
+ 
+  #map { 
+    position:absolute; 
+    top:0; 
+    bottom:0; 
+    width:100%; 
+    height: 540px; 
+   } 
+
+.info { 
+z-index: 1000; 
+position: absolute; 
+right: 20px; 
+top: 20px; 
+padding: 6px 8px; 
+font: 14px Arial, Helvetica, sans-serif; 
+text-align: right; 
+background: white; 
+background: rgba(255, 255, 255, 0.8); 
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
+border-radius: 5px; 
+} 
+.info h1 { 
+font-size: 16px; 
+margin: 0 0 5px; 
+color: #777777; 
+}
+.legend {
+                position: absolute;
+                bottom: 50px;
+                left: 8px;
+                background-color: rgb(255, 255, 255);
+                padding: 10px;
+                border-radius: 5px;
+                z-index: 1000;
+                box-shadow: 0 0 5px #e09d70;
+            }
+
+
+</style>
+
+</head>
+
+ <body> 
+    
+<div id='map'></div> 
+<div id='map-description'>
+ </div>
+
+<div class='legend'></div> 
+<h1>United States Poverty Percentages in 2022</h1> 
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> 
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script> 
+
+<script>
+ console.log("hello world!"); 
+
+var map = L.map('map', {
+center: [39.5, -95.3],
+zoom: 4
+});
+
+
+
+var OpenStreetMap_HOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
+}).addTo(map);
+
+states = L.geoJson.ajax("assets/data.geojson",{ 
+attribution: 'Data: US Census Bureau, Map', 
+pointToLayer: function (feature, x){ 
+return L.circleMarker(x, { 
+color: '#e09d70', 
+opacity: 1, 
+weight: 2, 
+fillColor: '#e09d70', 
+fillOpacity: .6, 
+radius: calcRadius(feature.properties.estimate) 
+}).on({ 
+
+      }).bindPopup(
+            `<b>${feature.properties.name}</b><br>Poverty Percentage: ${feature.properties.estimate}%`
+            ).on({ 
+click: function(e){ 
+this.setStyle({color:'#ff7900', fillColor: '#ff7900'}); 
+} })},}); 
+
+
+var minValue = 7.30; 
+var midValue=  11.85;
+var maxValue= 19.2; 
+var minRadius = 9; 
+
+
+function calcRadius (val) {
+    return 1.0*Math.pow(val/minValue,1.2)*minRadius;
+} 
+
+states.addTo(map);
+
+var info = L.control();
+      info.onAdd = function (map) {
+          this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+          this.update();
+          return this._div;
+      };
+
+      // method that we will use to update the control based on feature properties passed
+      info.update = function (props) {
+            this._div.innerHTML = '<h4>US Population Poverty</h4>' +  (props ?
+'<b>' + props.name + '</b><br />Poverty Percentage: ' + props.estimate + '%': 'Click over a state');
+      };
+
+      info.addTo(map);
+
+      // 4. create the legend
+
+      var legend = L.control({ position: 'bottomleft' });
+
+legend.onAdd = function (map) {
+    var div = L.DomUtil.create('div', 'legend');
+    div.innerHTML += '<b>Poverty Percentage (Min/Mid/Max)</b><br>';
+
+    var sizes = [minValue, midValue, maxValue];
+
+    sizes.forEach(function (size) {
+        var radius = calcRadius(size);
+        div.innerHTML += `
+            <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                <span class="circle" style="
+                    display: inline-block;
+                    width: ${radius * 2}px; 
+                    height: ${radius * 2}px; 
+                    border-radius: 50%; 
+                    background: #ff7900; 
+                    margin-right: 8px;">
+                </span>
+                <span>${size}%</span>
+            </div>
+        `;
+    });
+
+    return div;
+};
+
+legend.addTo(map);
+console.log(calcRadius(minValue)); 
+
+      // 5. create the credits
+
+      map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a> | This map is made by Madelynn. S');
+
+
+    // 6. Map description 
+
+document.getElementById('map-description').innerHTML = `
+
+    <h2>Map Description</h2>
+    <p>
+        This map uses 2022 data to visualize poverty percentages across US states.
+        Click on a circle to see detailed information about a specific state. The circles will change colors, so you can visualize what data you have seen. 
+    </p>
+    <p> 
+        “Overcoming poverty is not a task of charity, it is an act of justice. Like Slavery and Apartheid, poverty is not natural. It is man-made and it can be overcome and eradicated by the actions of human beings. Sometimes it falls on a generation to be great. You can be that great generation. Let your greatness blossom. - Nelson Mandela”
+</p>
+
+`;
+
+
+</script> 
+
+
+</body>
+ </html>
